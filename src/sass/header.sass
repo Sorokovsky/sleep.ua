@@ -1,0 +1,20 @@
+.header
+    background-color: $main-bg-color
+    &__container
+        padding: 6rem 0
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__menu
+        flex-direction: row
+        flex-wrap: wrap
+    &__link
+        &::after
+            display: block
+            content: ""
+            width: 0
+            height: 3rem
+            background: #000
+            transition: .3s all ease
+        &:hover::after
+            width: 100%
