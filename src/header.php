@@ -25,6 +25,9 @@
                     </li>
                     <?php } ?> 
                 </ul>
+                <div class="burger">
+                    <div class="burger-body"></div>
+                </div>
             </nav>
         </div>
     </header>
