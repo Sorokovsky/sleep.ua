@@ -1,6 +1,8 @@
 .header
-    background-color: $main-bg-color
-    position: relative
+    background-color: $header-bg-color
+    position: sticky
+    top: 0
+    left: 0
     z-index: 1000
     &__container
         padding: 6rem 0
@@ -10,6 +12,8 @@
         gap: 20rem
     .burger
         display: none
+    .logo
+        flex-shrink: 0
     &__menu
         flex-direction: row
         flex-wrap: wrap

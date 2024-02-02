@@ -1,5 +1,6 @@
 <?php 
 add_theme_support( 'menus' );
+add_theme_support( 'post-thumbnails' );
 function my_theme_enqueue_styles() {
     wp_enqueue_style( 'style', get_template_directory_uri().'/css/style.min.css' );
     wp_enqueue_script( 'script', get_template_directory_uri().'/js/script.min.js', array(), false, true);

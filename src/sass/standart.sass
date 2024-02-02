@@ -18,6 +18,8 @@ body
     font-size: 18rem
     font-family: 'Montserrat', sans-serif
     font-weight: 400
+    display: flex
+    flex-direction: column
     @media screen and ( max-width: 991px )
         &._lock
             overflow: hidden
@@ -27,18 +29,8 @@ section, header, footer
 .container
     max-width: $maxWidthContainer + rem
     margin: 0 auto
-img
-    height: 100%
-    width: 100%
-    object-fit: cover
 #wpadminbar
     display: none
-.logo
-    width: 60rem
-    height: 60rem
-    display: block
-    overflow: hidden
-    border-radius: 50%
 .menu
     display: flex
     align-items: center
@@ -46,3 +38,25 @@ img
     gap: 20rem
     &__link
         font-weight: 700
+.page
+    margin-top: 20rem
+    flex-grow: 1
+.swiper
+    width: 100%
+    &, &-slide
+        @include adaptiv-value('min-height', 650, 180, 0)
+    &-slide
+        background-repeat: no-repeat
+        background-size: cover
+    &-pagination
+        display: block
+        bottom: 6.896552% !important // 24/348
+        &-bullet
+            cursor: pointer
+            width: 15rem
+            height: 15rem
+            background-color: #ffffff
+            opacity: 1
+            transition: .3s background-color ease
+            &-active
+                background-color: #000

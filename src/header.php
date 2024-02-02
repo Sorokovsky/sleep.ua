@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-    <title>Головна</title>
+    <title><?php the_title(); ?></title>
     <?php get_header(); ?>
 </head>
 <body>
@@ -31,3 +31,4 @@
             </nav>
         </div>
     </header>
+    <main class="page">
