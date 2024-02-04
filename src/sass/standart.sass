@@ -20,12 +20,16 @@ body
     font-weight: 400
     display: flex
     flex-direction: column
+    min-height: 100vh
     @media screen and ( max-width: 991px )
         &._lock
             overflow: hidden
         
 section, header, footer
     padding: 0 15rem
+section, header
+    &:not(:last-child)
+        margin-bottom: 60rem
 .container
     max-width: $maxWidthContainer + rem
     margin: 0 auto
@@ -40,6 +44,7 @@ section, header, footer
         font-weight: 700
 .page
     margin-top: 20rem
+    margin-bottom: 60rem
     flex-grow: 1
 .swiper
     width: 100%
@@ -50,7 +55,7 @@ section, header, footer
         background-size: cover
     &-pagination
         display: block
-        bottom: 6.896552% !important // 24/348
+        bottom: 0% !important
         &-bullet
             cursor: pointer
             width: 15rem

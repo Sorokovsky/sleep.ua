@@ -1,0 +1,36 @@
+<svg width="109.000000" height="108.000000" viewBox="0 0 109 108" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_4_13_dd" x="0.000000" y="0.000000" width="109.000000" height="108.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="4"/>
+			<feGaussianBlur stdDeviation="1.33333"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+		<clipPath id="clip4_7">
+			<rect id="earth" width="100.000000" height="100.000000" transform="translate(5.000000 0.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g filter="url(#filter_4_13_dd)">
+		<rect id="icon" width="101.000000" height="100.000000" transform="translate(4.000000 0.000000)" fill="#FFFFFF" fill-opacity="0"/>
+		<ellipse id="icon" cx="55.000000" cy="51.000000" rx="50.499996" ry="50.500000" stroke="#C4C4C4" stroke-opacity="1.000000" stroke-width="1.000000"/>
+		<g clip-path="url(#clip4_7)">
+			<path id="path" d="M55 91.6667C78.0119 91.6667 96.6666 73.0119 96.6666 50C96.6666 26.9882 78.0119 8.33337 55 8.33337C31.9881 8.33337 13.3334 26.9882 13.3334 50C13.3334 73.0119 31.9881 91.6667 55 91.6667Z" fill="#000000" fill-opacity="0" fill-rule="evenodd"/>
+			<path id="path" d="M96.6666 50C96.6666 26.9882 78.0119 8.33337 55 8.33337C31.9881 8.33337 13.3334 26.9882 13.3334 50C13.3334 73.0119 31.9881 91.6667 55 91.6667C78.0119 91.6667 96.6666 73.0119 96.6666 50Z" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+			<path id="path" d="M13.3524 50.7296L13.3324 50.7496C12.9124 50.7496 12.5824 50.4196 12.5824 49.9996C12.5824 49.5796 12.9124 49.2496 13.3324 49.2496L13.3524 49.2696L13.3524 50.7296ZM96.6455 49.2696L96.6655 49.2496C97.0855 49.2496 97.4155 49.5796 97.4155 49.9996C97.4155 50.4196 97.0855 50.7496 96.6655 50.7496L96.6455 50.7296L96.6455 49.2696Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+			<path id="path" d="M13.3324 49.9996L96.6655 49.9996" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+			<path id="path" d="M55 91.6667C64.2048 91.6667 71.6667 73.0119 71.6667 50C71.6667 26.9882 64.2048 8.33337 55 8.33337C45.7952 8.33337 38.3333 26.9882 38.3333 50C38.3333 73.0119 45.7952 91.6667 55 91.6667Z" fill="#000000" fill-opacity="0" fill-rule="evenodd"/>
+			<path id="path" d="M71.6667 50C71.6667 26.9882 64.2048 8.33337 55 8.33337C45.7952 8.33337 38.3333 26.9882 38.3333 50C38.3333 73.0119 45.7952 91.6667 55 91.6667C64.2048 91.6667 71.6667 73.0119 71.6667 50Z" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+			<path id="path" d="M25.0352 21.6597L25.007 21.6597C24.71 21.3627 24.71 20.896 25.007 20.5991C25.304 20.3021 25.7706 20.3021 26.0676 20.5991L26.0676 20.6273L25.0352 21.6597ZM83.9326 20.6273L83.9326 20.5991C84.2296 20.3021 84.6963 20.3021 84.9932 20.5991C85.2902 20.8961 85.2902 21.3627 84.9932 21.6597L84.965 21.6597L83.9326 20.6273Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+			<path id="path" d="M25.5373 21.1294C33.0775 28.6696 43.4941 33.3334 55 33.3334C66.506 33.3334 76.9227 28.6696 84.4629 21.1294" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+			<path id="path" d="M84.965 78.3402L84.9932 78.3402C85.2902 78.6372 85.2902 79.1039 84.9932 79.4009C84.6963 79.6979 84.2296 79.6979 83.9326 79.4009L83.9326 79.3726L84.965 78.3402ZM26.0676 79.3726L26.0676 79.4009C25.7706 79.6979 25.304 79.6979 25.007 79.4009C24.71 79.1039 24.71 78.6372 25.007 78.3402L25.0352 78.3402L26.0676 79.3726Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+			<path id="path" d="M84.4629 78.8706C76.9227 71.3304 66.506 66.6666 55 66.6666C43.4941 66.6666 33.0775 71.3304 25.5373 78.8706" stroke="#808080" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,31 @@
+.benefits
+    &__title
+        &:not(:last-child)
+            margin-bottom: 38px
+    img
+        width: 100rem
+        height: 100rem
+        border-radius: 50%
+        overflow: hidden
+        display: block
+    article
+        figcaption
+            font-size: 24rem
+            
+        figure
+            font-size: 18rem
+            color: #111010
+        *:not(:last-child)
+            margin-bottom: 10rem
+    &__plate
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 25rem
+    @media screen and ( max-width: 636px )
+        article
+            margin: 0 auto
+            text-align: center
+            img
+                margin: 0 auto
