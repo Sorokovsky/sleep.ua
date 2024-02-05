@@ -10,10 +10,14 @@
 </head>
 <body>
     <header class="header">
+        <?php get_one_tell(); ?>
         <div class="container header__container">
             <a href="<?php echo home_url(); ?>" class="logo header__logo">
                 <img src=<?php echo get_custom_logo_url(); ?> alt="">
             </a>
+            <p class="header__ukrane">
+                <span>Український виробник</span> <img src="<?php echo get_theme_file("/img/ukrane.png"); ?>">
+            </p>
             <nav class="header__nav nav">
                 <ul class="menu header__menu">
                     

@@ -26,7 +26,7 @@ function get_custom_logo_url()
     $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
     return $image[0];
 }
-function get_posts_by_category_ID(int $id): array {
+function get_posts_by_category_ID(int $id, int $limit = -1): array {
     $args = array(
         'posts_per_page'   => -1,
         'category'         => $id,
@@ -58,13 +58,8 @@ function get_popular_block() {
                     setup_postdata($popular);
                     $url = wp_get_attachment_url( get_post_thumbnail_id($popular->ID), 'thumbnail' );
                 ?>
-                    <div class="swiper-slide hero-slide" style="background-image: url('<?php echo $url; ?>')">
-                    <div class="hero__description">
-                    <h2 class="hero__name"><?php echo $popular->post_title; ?></h2>
-                    <?php echo the_content(); ?>
-                    <a href="<?php echo the_permalink(); ?>" class="button hero__button">Перейти</a>
-                    </div>
-                </div>
+                    <a href="<?php echo get_permalink( $popular); ?>" class="swiper-slide hero-slide" style="background-image: url('<?php echo $url; ?>')">
+                </a>
                 <?php
                     wp_reset_postdata(); 
                 }
@@ -76,6 +71,19 @@ function get_popular_block() {
     </section>
     <?php
 }
+function get_one_tell() {
+    $tels_cat = get_category_by_slug("tels");
+    $tels = get_posts_by_category_ID($tels_cat->term_id, 1);
+    foreach ($tels as $tel) {
+        setup_postdata($tel);
+        ?>
+        <a href="tel:<?php echo $tel->post_title; ?>" class="call">
+            <img src="<?php echo get_theme_file("/img/tel.svg"); ?>" alt="Позвонити">
+        </a>
+        <?php
+        wp_reset_postdata();
+    }
+}
 function get_tels() {
     $tels_cat = get_category_by_slug("tels");
     $tels = get_posts_by_category_ID($tels_cat->term_id);
@@ -84,8 +92,8 @@ function get_tels() {
         <?php foreach ($tels as $tel) :
             setup_postdata( $tel ); 
             ?>
-            <a href="<?php echo $tel->post_title; ?>" class="tels__item">
-                <img src="<?php echo get_theme_file("/img/tel.png") ?>" alt="">
+            <a href="tel:<?php echo $tel->post_title; ?>" class="tels__item">
+                <img src="<?php echo get_theme_file("/img/tel.svg") ?>" alt="">
                 <?php echo $tel->post_title; ?>
             </a>
         <?php
@@ -102,7 +110,7 @@ function get_sociables() {
             setup_postdata( $sociable );
             $url = wp_get_attachment_url( get_post_thumbnail_id($sociable->ID), 'thumbnail' ); 
             ?>
-            <a href="<?php echo $sociable->post_title; ?>" class="sociables__item">
+            <a target="_blank" href="<?php echo $sociable->post_title; ?>" class="sociables__item">
                 <img src="<?php echo $url; ?>" alt="sleep.ua">
             </a>
         <?php 
@@ -139,3 +147,30 @@ function get_benefits_block() {
         </div>
     </section>
 <?php }
+function get_checkbox(string $name, string $value, string $content) {
+    $checked = false;
+    if(isset($_GET[$name])) {
+        $checked = true;
+    }
+    ?>  
+    <label class="checkbox">
+        <input <?php echo $checked ? "checked" : ""; ?> type="checkbox" name="<?php echo $name; ?>" value="<?php echo $value; ?>">
+        <span><?php echo $content; ?></span>
+    </label>
+    <?php
+} 
+function get_card($product) {
+    $url = wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); 
+    ?>
+    <article class="card">
+        <div class="card__image">
+            <img src="<?php echo $url; ?>" alt="<?php echo $product->post_title; ?>">
+        </div>
+        <div class="card__description">
+            <h3 class="card__name"><?php echo $product->post_title; ?></h3>
+            <?php echo $product->post_excerpt; ?>
+            <a href="<?php echo get_permalink($product); ?>" class="button">Детальніше</a>
+        </div>
+    </article>
+    <?php
+}

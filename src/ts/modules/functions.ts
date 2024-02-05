@@ -95,9 +95,41 @@ export async function registerServiceWarker():Promise<void>{
 export function targetPage() {
     const menuLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(".menu__link");
     menuLinks.forEach((item: HTMLAnchorElement) => {
-        if(item.href == location.href)
+        if(item.href == location.href || item.href.replace("//", "") == location.href)
         {
-            item.classList.add("active");
+            item.classList.add("_active");
+        }
+    });
+}
+export function enableFilters(selector: string = '.checkbox > input'): void {
+    let currentLocation: string = location.href;
+    const filters: NodeListOf<HTMLInputElement> = document.querySelectorAll(selector);
+    filters.forEach((filter: HTMLInputElement) => {
+        filter.onchange = (event: Event ) => {
+           const target: HTMLInputElement = event.target as HTMLInputElement;
+           let resultLocation: string = currentLocation;
+           if(target.checked) {
+            if(currentLocation.endsWith("/")) {
+                resultLocation += "?"; 
+            } else {
+                resultLocation += "&";
+            }
+            resultLocation += target.name + '=' + target.value;
+            
+           }
+           else
+           {
+            if(currentLocation.includes(`?${target.name}=${target.value}`)) {
+                resultLocation = currentLocation.replace(`?${target.name}=${target.value}`, '');
+            } else {
+                resultLocation = resultLocation.replace(`&${target.name}=${target.value}`, '');
+            }
+            resultLocation = resultLocation.replace("/&", "/?");
+           }
+           const timer = setTimeout(() => {
+            location.href = resultLocation;
+        }, 500);
+
         }
     });
 }

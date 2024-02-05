@@ -6,26 +6,27 @@
         &:not(:last-child)
             margin-bottom: 18rem
     &-slide
+        background-position: center center
         display: flex
         flex-direction: column
         justify-content: center
         *:not(:last-child)
             margin-bottom: 10rem
     &__description
-        max-width: 400rem
+        @include adaptiv-value('max-width', 380, 200, 0)
         padding: 18rem
         @include adaptiv-value('margin-left', 196, 10, 0)
         margin-right: 10rem
         position: relative
         z-index: 0
-        background-color: $main-bg-color
+        background-color: rgba(33, 225, 232, 0.8)
         opacity: 1
     &__name
-        @include adaptiv-font(24, 18)
+        @include adaptiv-font(24, 14)
         font-weight: 400
         line-height: 122.916667% // 59/48
         color:#000
     p
-        font-size: 16rem
+        @include adaptiv-font(14, 10)
         color: #000
         line-height: 122.916667% // 59/48

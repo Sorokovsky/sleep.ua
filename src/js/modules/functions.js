@@ -90,8 +90,39 @@ export async function registerServiceWarker() {
 export function targetPage() {
     const menuLinks = document.querySelectorAll(".menu__link");
     menuLinks.forEach((item) => {
-        if (item.href == location.href) {
-            item.classList.add("active");
+        if (item.href == location.href || item.href.replace("//", "") == location.href) {
+            item.classList.add("_active");
         }
+    });
+}
+export function enableFilters(selector = '.checkbox > input') {
+    let currentLocation = location.href;
+    const filters = document.querySelectorAll(selector);
+    filters.forEach((filter) => {
+        filter.onchange = (event) => {
+            const target = event.target;
+            let resultLocation = currentLocation;
+            if (target.checked) {
+                if (currentLocation.endsWith("/")) {
+                    resultLocation += "?";
+                }
+                else {
+                    resultLocation += "&";
+                }
+                resultLocation += target.name + '=' + target.value;
+            }
+            else {
+                if (currentLocation.includes(`?${target.name}=${target.value}`)) {
+                    resultLocation = currentLocation.replace(`?${target.name}=${target.value}`, '');
+                }
+                else {
+                    resultLocation = resultLocation.replace(`&${target.name}=${target.value}`, '');
+                }
+                resultLocation = resultLocation.replace("/&", "/?");
+            }
+            const timer = setTimeout(() => {
+                location.href = resultLocation;
+            }, 500);
+        };
     });
 }

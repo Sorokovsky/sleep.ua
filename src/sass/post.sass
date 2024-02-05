@@ -1,0 +1,25 @@
+.post
+    padding-top: 30rem
+    &__container
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        gap: 30rem
+    &__content
+        font-size: 18rem
+        div:not(:last-child)
+            margin-bottom: 15rem
+    &__title
+        font-size: 20rem
+        text-align: left
+        &:not(:last-child)
+            margin-bottom: 10rem
+    &__image
+        max-width: 500rem
+        height: auto
+    @media screen and ( max-width: 848px )
+        &__container
+            flex-direction: column
+        &__image
+            margin: 0 auto
+            max-width: 400rem
