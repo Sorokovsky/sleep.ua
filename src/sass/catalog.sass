@@ -10,7 +10,7 @@
         font-size: 36rem
         &:not(:last-child)
             margin-bottom: 16rem
-    &__subtitle
+    h2.catalog__subtitle
         font-size: 24rem
     &__cats
         display: flex
@@ -21,19 +21,19 @@
         &:not(:last-child)
             margin-bottom: 15rem
     &__plate
-        max-width: 960rem
-        width: 100%
+        flex-basis: 960rem
+        flex-grow: 1
         display: flex
         align-items: flex-start
         justify-content: flex-start
-        gap: 30rem
+        column-gap: 2.607362% // 34/1304
+        row-gap: 10rem
         flex-wrap: wrap
         .card
             display: block
             flex-basis: 300rem
             flex-grow: 0
             flex-shrink: 0
-            width: 100%
             border: 1rem solid #C4C4C4
             .button
                 margin-top: 10rem

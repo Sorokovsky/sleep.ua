@@ -13,6 +13,14 @@
             <div class="post__more">
             <?php echo get_the_content(); ?>
             </div>
+            <?php
+             $logged = is_user_logged_in(); 
+             if($logged) {
+                ?>
+                <a href="<?php echo get_edit_post_link(); ?>" class="button">Редактувати</a>
+                <?php
+             }
+             ?>
         </div>
     </div>
 </section>

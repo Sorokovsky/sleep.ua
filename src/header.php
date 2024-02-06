@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог з цінами на постільну білизну в інтернет магазині, Хмельницький.">
+    <meta name="keywords" content="Постільна білизна, простирадло, підковдра, наволочки, в Хмельницькому">
     <?php wp_head(); ?>
     <title><?php the_title(); ?></title>
     <?php get_header(); ?>

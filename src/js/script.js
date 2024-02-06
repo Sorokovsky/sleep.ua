@@ -4,7 +4,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 new Swiper(".swiper", {
     modules: [Pagination, Autoplay],
     loop: true,
-    speed: 500,
+    speed: 900,
     autoplay: {
         delay: 1000,
     },
@@ -16,3 +16,6 @@ isWebp();
 targetPage();
 mobileMenu();
 enableFilters();
+document.body.querySelectorAll("*").forEach((element) => {
+    element.innerHTML.replace("��", "");
+});

@@ -68,6 +68,10 @@ function get_popular_block() {
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
         </div>
+        <div class="container hero__container">
+           <h2 class="title hero__title hero__subtitle">Пошиття за індивідуальним розміром прораховується індивідуально</h2>
+            <h2 class="title hero__title hero__subtitle">Пошиття простирадла на резинці +100грн до ціни</h2>
+        </div>
     </section>
     <?php
 }
@@ -163,14 +167,83 @@ function get_card($product) {
     $url = wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); 
     ?>
     <article class="card">
-        <div class="card__image">
+        <a href="<?php echo get_permalink($product); ?>" class="card__image">
             <img src="<?php echo $url; ?>" alt="<?php echo $product->post_title; ?>">
-        </div>
+        </a>
         <div class="card__description">
             <h3 class="card__name"><?php echo $product->post_title; ?></h3>
             <?php echo $product->post_excerpt; ?>
             <a href="<?php echo get_permalink($product); ?>" class="button">Детальніше</a>
         </div>
     </article>
+    <?php
+}
+function get_catalog() {
+    $main_cat = get_category_by_slug('products');
+$taxonomies = array( 
+    'category',
+);
+
+$args = array(
+    'parent'         => $main_cat->term_id,
+    // 'child_of'      => $parent_term_id, 
+); 
+
+$cats = get_categories(
+    array(
+        'child_of' => $main_cat->term_id,
+        'post_status' => 'publish', 
+        'orderby' => 'publish_date', 
+        'order' => 'DESC',
+        'hide_empty' => '0'
+        )
+);
+$cats_ids = array();
+foreach ($cats as $cat) {
+    if(isset($_GET[$cat->slug])) {
+        $cats_ids[count($cats_ids)] = $cat->term_id;
+    }
+}
+if(count($cats_ids) == 0)
+{
+    foreach ($cats as $cat) {
+        $cats_ids[count($cats_ids)] = $cat->term_id;
+    }
+}
+    ?>
+    <section class="catalog">
+        <div class="container catalog__container">
+            <!-- <div class="filter catalog__filter">
+                <h2 class="title catalog__title catalog__subtitle">Категорії</h2>
+                <div class="catalog__cats">
+                    <?php foreach ($cats as $cat) : ?>
+                        <?php get_checkbox($cat->slug, $cat->slug, $cat->name); ?>                       
+                    <?php endforeach; ?>
+                </div>
+            </div> -->
+            <div class="catalog__plate">
+                <?php
+                $products = get_posts_by_category_ID($main_cat->term_id); 
+                foreach ($products as $product) {
+                    setup_postdata($product);
+                    $product_cats = (get_the_category( $product->ID ));
+                    $can_show = false;
+                    foreach($product_cats as $cat) {
+                        foreach($cats_ids as $id) {
+                            if($id == $cat->term_id) {
+                                $can_show = true;
+                            }
+                        }
+                    }
+                    if($can_show)
+                    {
+                        get_card($product);
+                    }
+                    wp_reset_postdata();
+                }
+                ?>
+            </div>
+        </div>
+    </section>
     <?php
 }
